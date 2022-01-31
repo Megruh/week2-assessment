@@ -33,11 +33,13 @@ const cart = [
     }
 ]
 
-const sum = cart.reduce (function(acc, price) { 
-    return acc + cart.price
-})
-console.log(sum)
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+
+const summedPrice = cart.reduce((acc, el) => {
+    console.log(acc, el)
+    return acc + el.price
+}, 0)
+
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,11 +57,11 @@ console.log(sum)
     decimals, for example: .06 for a 6% tax.
 */
 
-function calcFinalPrice(cartTotal, couponValue, tax){
-    
+const calcFinalPrice = (total, coupon, tax) => {
+    return (total * (1 + tax)) - coupon 
 }
 
-
+console.log(calcFinalPrice(10, 2, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -82,7 +84,11 @@ function calcFinalPrice(cartTotal, couponValue, tax){
 */
 
 /*
-    TEXT ANSWER HERE
+    customer object will have
+    firstName (string)
+    lastName (string)
+    phone number (string)
+    creditCard (number)
 
 */
 
@@ -91,4 +97,9 @@ function calcFinalPrice(cartTotal, couponValue, tax){
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    firstName: "Meg",
+    lastName: "McCauley",
+    phone: "123-456-7899",
+    creditCard: 09889498377467
+}

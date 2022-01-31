@@ -55,7 +55,8 @@ function canWeDeliver(zipCode) {
     }
   }
 }
-console.log(canWeDeliver(12234));
+console.log(canWeDeliver(85205));
+
 
 /* 
     Problem 2 Continued
@@ -116,8 +117,9 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-const newDeal = title.replace("15% Off!", "10% Off!")
-console.log(newDeal)
+deals[0].title = deals[0].title.replace("15", "10")
+console.log(deals)
+
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -127,8 +129,9 @@ console.log(newDeal)
     to replace the word March with April.
 
     You should also make sure that there is no
-    whitespace in this string, since it seems
+    whitespace in this string, since it seems 
     to be displaying wrong on the live site.
 */
 
-
+deals[1].desc = deals[1].desc.replace("March", "April").trim()
+console.log(deals)

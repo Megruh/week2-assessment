@@ -25,7 +25,7 @@ class Employee {
     this.shifts = shifts;
   }
   getSchedule() {
-    return `${name} works on ${shifts}`;
+      console.log(`${this.name} works on ${this.shifts}`);
   }
 }
 
@@ -46,7 +46,7 @@ let empOne = new Employee("Jess", "weekday mornings, weekday afternoons")
     `empOne` object.
 */
 
-(getSchedule(empOne)
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -89,14 +89,13 @@ empTwo.name = "Nick"
 class Manager extends Employee {
     constructor(name, shifts, employees){
         super(name, shifts)
-        this.employees = []
+        this.employees = employees
     }
     getEmployees() {
-        console.log(`${this.name} manages ${this.employees}`)
+        console.log(`${this.name} manages ${this.employees.join(',')}`)
     }
     addEmployee(emp){
-        this.employees.push()
-        return employees
+        this.employees.push(emp)
     }
 }
 
@@ -111,7 +110,7 @@ class Manager extends Employee {
     employees: Cece and Schmidt
 */
 
-const manager = new Manager("Winston", "weekday mornings, weekday afternoons", "Cece and Schmidt")
+const manager = new Manager("Winston", "weekday mornings, weekday afternoons", ["Cece", "Schmidt"])
 
 /*
     Call the `getEmployees` method on the
